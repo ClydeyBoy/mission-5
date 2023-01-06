@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+
+
+.FooterContainer {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background-color: black;
+    width: 100vw;
+    height: 5.65vh;
+    color: #707070;
+    /* outline: 2px red outset; */
+    text-align: center;
+    
+    
+}
+
+#FooterText {
+    font-family: 'Nunito', sans-serif;
+    /* outline: 2px red outset; */
+    margin-top: 2.08vh;
+    font-weight: 700;
+    font-size: 1.48vh;
+    
+    
+    
+}
