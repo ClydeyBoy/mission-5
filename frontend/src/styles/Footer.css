@@ -1,28 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
 
-.FooterContainer {
-    position: fixed;
+.footerContainer {
+    position: absolute;
+    display: flex;
     bottom: 0;
     z-index: 1;
     background-color: black;
     width: 100vw;
-    height: 5.65vh;
-    color: #707070;
+    height: 19.36vw;
+    color: white;
     /* outline: 2px red outset; */
     text-align: center;
-    
-    
 }
 
-#FooterText {
-    font-family: 'Nunito', sans-serif;
+.footerLogo {
+    margin-top: 2.69vw;
+    margin-left: 6.41vw;
+    width: 16.41vw;
+    height: 5.60vw;
     /* outline: 2px red outset; */
-    margin-top: 2.08vh;
-    font-weight: 700;
-    font-size: 1.48vh;
-    
-    
-    
+}
+
+.footerTextColumn1 {
+    position: absolute;
+    margin-top: 2.69vw;
+    margin-left: 28.98vw;
+    font-family: 'Inter', sans-serif;
+    /* outline: 2px red outset; */
+    font-weight: 600;
+    font-size: 1.09vw;
+    text-align: left;
+}
+
+.footerTextColumn2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+    margin-top: 2.69vw;
+    margin-left: 53.44vw;
+    font-family: 'Inter', sans-serif;
+    /* outline: 2px red outset; */
+    font-weight: 600;
+    font-size: 1.09vw;
+    text-align: left;
+}
+
+.footerTextColumn3 {
+    position: absolute;
+    margin-top: 2.69vw;
+    margin-left: 73.05vw;
+    font-family: 'Inter', sans-serif;
+    /* outline: 2px red outset; */
+    font-weight: 600;
+    font-size: 1.09vw;
+    text-align: left;
+}
+
+.socialMediaIcons {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    width: 15.79vw;
+    height: 3.19vw;
+    gap: 1.09vw;
+    color: white;
+    /* outline: 2px red outset; */
+    margin-left: 73.38vw;
+    margin-top: 8.76vw;
+}
+
+#copyrightText {
+    position: absolute;
+    width: 100vw;
+    bottom: 2.30vw;
+    font-family: 'Inter', sans-serif;
+    /* outline: 2px red outset; */
+    font-weight: 600;
+    font-size: 1.09vw;
+    text-align: center;
+
 }
