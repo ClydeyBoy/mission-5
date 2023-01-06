@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.headerContainer {
+    position: absolute;
+    display: flex;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 12.5vw;
+    color: black;
+    outline: 1.5px black outset;
+}
+
+.headerLogo {
+    margin-top: 3.21vw;
+    margin-left: 6.56vw;
+    width: 28.13vw;
+    height: 7.5vw;
+    /* outline: 2px red outset; */
+}
+
+.headerLinks {
+    position: absolute;
+    display: flex;
+    gap: 3.36vw;
+    top: 5.57vw;
+    left: 40vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.56vw;
+    /* outline: 2px red outset; */
+}

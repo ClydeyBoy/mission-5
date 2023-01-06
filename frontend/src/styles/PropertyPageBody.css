@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.propertyPhoto {
+    position: absolute;
+    top: 14.29vw;
+    left: 0.23vw;
+    width: 57.89vw;
+    height: 34.79vw;
+    /* outline: 2px red outset; */
+}
+
+.propertySummary {
+    position: absolute;
+    width: 41.88vw;
+    height: 34.79vw;
+    top: 14.29vw;
+    right: 0;
+    font-family: 'Montserrat', sans-serif;
+    /* outline: 2px red outset; */
+    text-align: center;
+}
+
+.propertyAddress {
+    position: absolute;
+    width: 41.88vw;
+    top: 12.29vw;
+    right: 0;
+    /* outline: 2px red outset; */
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: 700vw;
+}
+
+.propertyRooms {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    width: 41.88vw;
+    top: 22vw;
+    right: 0;
+    /* outline: 2px red outset; */
+    text-align: center;
+    font-size: 2.03vw;
+    font-weight: 400vw;
+}
+
+.bedroomIcon {
+    position: relative;
+    width: 2.03vw;
+    height: 1.29vw;
+    left: 1vw
+        /* outline: 2px red outset; */
+}
+
+.bathroomIcon {
+    position: relative;
+    width: 1.6vw;
+    height: 1.6vw;
+    left: 1vw;
+    /* outline: 2px red outset; */
+}
+
+.parkingIcon {
+    position: relative;
+    width: 1.64vw;
+    height: 1.64vw;
+    left: 1vw;
+    top: 0.1vw;
+    /* outline: 2px red outset; */
+}
+
+.propertyDescription {
+    position: absolute;
+    width: 81.17vw;
+    height: 26.43vw;
+    top: 53.57vw;
+    text-align: left;
+    left: 50%;
+    transform: translatex(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25vw;
+    font-weight: 500;
+}
+
+.btnContainer {
+    position: absolute;
+    display: flex;
+    gap: 3.75vw;
+    top: 84.5vw;
+    height: 4.79vw;
+    width: 100vw;
+    justify-content: center;
+    /* outline: 2px red outset; */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.72vw;
+    font-weight: 500;
+    line-height: 4.79vw;
+}
+
+.watchlistBtn {
+    background-color: black;
+    height: 100%;
+    width: 17.97vw;
+}
+
+.bookViewingBtn {
+    background-color: #8E8E8E;
+    height: 100%;
+    width: 17.03vw;
+}
+
+.applyBtn {
+    background-color: #D90C1E;
+    height: 100%;
+    width: 12.81vw;
+}
+
+.propertyInfoHeadings {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 17.5vw;
+    left: 23.20vw;
+    top: 94.71vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.88vw;
+    font-weight: 600;
+    line-height: 4.79vw;
+}
+
+.propertyInfoColumn1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    left: 23.20vw;
+    top: 99.3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.56vw;
+    font-weight: 500;
+    text-align: left;
+}
+
+.propertyInfoColumn2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    left: 56.5vw;
+    top: 99.3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.56vw;
+    font-weight: 500;
+    text-align: left;
+}
+
+.carouselHeader {
+    position: absolute;
+    width:80%;
+    left: 50%;
+    transform:translateX(-50%) ;
+    top: 127.21vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.81vw;
+    font-weight: 700;
+    /* outline: 2px red outset; */
+}
+
+.propertyManagerCard {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    gap: 2vw;
+    background-color: #D9D9D9;
+    top: 155.1vw;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 38.59vw;
+    height: 16.86vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.propertyManagerImg {
+    position: relative;
+    top: 3.21vw;
+    left: 5.47vw;
+    width: 11.25vw;
+    height: 11.25vw;
+}
+
+.propertyManagerText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    top: 3.21vw;
+    width: 38.59vw;
+    height: 16.86vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.propertyManagerName {
+    font-size: 1.3vw;
+}
+
+.propertyManagerNumber {
+    font-size: 1.72vw;
+}
+
+.emailBtn {
+    position: relative;
+    background-color: black;
+    height: 3.28vw;
+    width: 8.91vw;
+    color: white;
+    line-height: 3.28vw;
+    font-size: 1.09vw;
+    left: 8.3vw;
+    font-weight: 600;
+}
+
+.btnContainer2 {
+    position: absolute;
+    display: flex;
+    gap: 3.75vw;
+    top: 179.5vw;
+    height: 4.79vw;
+    width: 100vw;
+    justify-content: center;
+    /* outline: 2px red outset; */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.72vw;
+    font-weight: 500;
+    line-height: 4.79vw;
+}
+
+.awardsHeader {
+    position: absolute;
+    width:80%;
+    left: 50%;
+    transform:translateX(-50%) ;
+    top: 194.9vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.81vw;
+    font-weight: 700;
+}
+
+.awardsLogos {
+    position: absolute;
+    width:55.93vw;
+    left: 50%;
+    transform:translateX(-50%) ;
+    top: 200.71vw;
+}
