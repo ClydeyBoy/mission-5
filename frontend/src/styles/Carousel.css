@@ -1,0 +1,82 @@
+.carousel {
+    display: flex;
+    gap: 1.41vw;
+    position: relative;
+    top: 133.93vw;
+    left: 4.06vw;
+    width: 93vw;
+}
+
+.cardContainer {
+    display: flex;
+    gap: 1.41vw;
+    position: relative;
+}
+
+.carouselCard {
+    width: 29.69vw;
+    height: 16.93vw;
+    background-color: black;
+    color: white;
+    gap: 1.41vw;
+    border-radius: 2vw;
+}
+
+.carouselCard img {
+    width: 29.69vw;
+    height: 16.93vw;
+    border-radius: 1vw;
+}
+
+.nextBtn,
+.prevBtn {
+    position: absolute;
+    height: 2.18vw;
+    width: 2.18vw;
+    border-radius: 100%;
+    border: none;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    font-size: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.nextBtn {
+    right: 0;
+}
+
+.prevBtn {
+    left: -1vw;
+}
+
+.arrow {
+    width: 0.7vw;
+    height: 1.13vw;
+}
+
+.dotsContainer {
+    position: absolute;
+    gap: 1vw;
+    display: flex;
+    z-index: 1;
+    top: 18vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot1,
+.dot2,
+.dot3
+{
+cursor: pointer;
+color: #D9D9D9;
+}
+
+.dotRed {
+    cursor: pointer;
+    color: #D90C1E;
+    transition: 0.8s;
+
+}

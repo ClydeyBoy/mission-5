@@ -11,6 +11,7 @@ import PropertyPageBody from '../components/PropertyPageBody';
     <div>
       <Header></Header>
       <PropertyPageBody></PropertyPageBody>
+      <Carousel></Carousel>
       <Footer></Footer>
     </div>
   )

@@ -1,22 +1,34 @@
 import '../styles/PropertyPageBody.css'
-import companyLogo from "../images/property_page/Company_Logo.jpg"
 import morningside_drive_photo from "../images/property_page/303-3_morningside_drive.png"
-import new_windsor_road_photo from "../images/property_page/54_new_windsor_road.png"
-import halesowen_ave_photo from "../images/property_page/18_halesowen_ave.png"
-import western_springs_road_photo from "../images/property_page/11_western springs_road.png"
 import bedroomIcon from "../images/property_page/Bedroom.png"
 import bathroomIcon from "../images/property_page/Bathroom.png"
 import parkingIcon from "../images/property_page/Parking.png"
 import propertyManagerPhoto from "../images/property_page/Holly_Wood.png"
 import awardsLogos from "../images/property_page/Awards_Logos.png"
+import {useState, useEffect} from 'react'
 
 
 function PropertyPageBody() {
+
+  const [address, setAddress] = useState([])
+
+  //call the get api to get property data from the database
+  useEffect(() => {
+    fetch('http://localhost:27017/')
+      .then(response => response.json())
+      .then((result) => {
+        setAddress(result[0].Address);
+        console.log(result[0].Address)
+      }, []);
+  });
+
+
+
     return (
         <>
             <img className='propertyPhoto' src={morningside_drive_photo} alt=""></img>
             <div className='propertySummary'>
-                <div className='propertyAddress'><b>303/3 Morningside Drive,</b> <br></br><b>Morningside</b></div>
+                <div className='propertyAddress'><b>{address},</b> <br></br><b>Morningside</b></div>
                 <div className='propertyRooms'>
                     <div>2<img className='bedroomIcon' src={bedroomIcon} alt=""></img></div>
                     <div>1<img className='bathroomIcon' src={bathroomIcon} alt=""></img></div>
