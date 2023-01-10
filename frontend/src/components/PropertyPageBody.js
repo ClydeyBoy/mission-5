@@ -5,48 +5,42 @@ import bathroomIcon from "../images/property_page/Bathroom.png"
 import parkingIcon from "../images/property_page/Parking.png"
 import propertyManagerPhoto from "../images/property_page/Holly_Wood.png"
 import awardsLogos from "../images/property_page/Awards_Logos.png"
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 
 function PropertyPageBody() {
 
-  const [address, setAddress] = useState([])
+    const [chattels, setChattels] = useState([])
+    const [propertySummary, setPropertySummary] = useState([])
+    const [propertyData, setPropertyData] = useState([])
 
-  //call the get api to get property data from the database
-  useEffect(() => {
-    fetch('http://localhost:27017/')
-      .then(response => response.json())
-      .then((result) => {
-        setAddress(result[0].Address);
-        console.log(result[0].Address)
-      }, []);
-  });
-
-
+    //call the get api to get property data from the database
+    useEffect(() => {
+        fetch('http://localhost:4000/propertypage')
+            .then(response => response.json())
+            .then((result) => {
+                setChattels(result[0].Chattels);
+                setPropertySummary(result[0].Property_summary);
+                setPropertyData(result[0]);
+            }, []);
+    });
 
     return (
         <>
-            <img className='propertyPhoto' src={morningside_drive_photo} alt=""></img>
+        
+            <img className='propertyPhoto' src={propertyData.Property_image_url} alt=""></img>
             <div className='propertySummary'>
-                <div className='propertyAddress'><b>{address},</b> <br></br><b>Morningside</b></div>
+                <div className='propertyAddress'><b>{propertyData.Address},</b> <br></br><b>{propertyData.Suburb}</b></div>
                 <div className='propertyRooms'>
-                    <div>2<img className='bedroomIcon' src={bedroomIcon} alt=""></img></div>
-                    <div>1<img className='bathroomIcon' src={bathroomIcon} alt=""></img></div>
-                    <div>3<img className='parkingIcon' src={parkingIcon} alt=""></img></div>
+                    <div>{propertyData.Bedrooms}<img className='bedroomIcon' src={bedroomIcon} alt=""></img></div>
+                    <div>{propertyData.Bathrooms}<img className='bathroomIcon' src={bathroomIcon} alt=""></img></div>
+                    <div>{propertyData.Carparks}<img className='parkingIcon' src={parkingIcon} alt=""></img></div>
                 </div>
             </div>
             <div className='propertyDescription'>
-                Presenting a two-bedroom apartment that stands out from the rest. Walk in and the first thing you'll notice is the EPIC high ceiling stud. It creates a sense of spaciousness and style that you just don't find in most apartments.
-                <br></br><br></br>
-                The tidy kitchen and bathroom are in good condition and the bedroom is a generous size. The north facing balcony gives you plenty of sun and a spot for the summer BBQ, and ensures the apartment is bathed in light.
-                <br></br><br></br>
-                There's easy value to add if you want to polish it further and make something truly special. Or if you are a first home buyer looking for a city fringe pad, then this one is quite simply a cut above the rest.
-                <br></br><br></br>
-                The apartment comes with not 1, not 2, but 3 carparks, as well as being adjacent to the train line and city bus routes.
-                <br></br><br></br>
-                All this and located in what is unquestionably Auckland's hippest little suburb, Morningside. Take your pick from the cafes, craft beer spots, event venues and eateries all on your doorstep. The gym is just next door and it's a quick few minutes down the road to Westfield St Luke's for a spot of shopping.
-                <br></br><br></br>
-                This apartment is a cracker and worth putting at the top of your Christmas list.
+                {propertySummary.map((line, index) => (
+                    <div key={(index)}>{line}<br></br><br></br></div>
+                ))}
             </div>
             <div className='btnContainer'>
                 <div className='watchlistBtn'>Add to Watchlist</div>
@@ -58,25 +52,20 @@ function PropertyPageBody() {
                 <div>Chattels</div>
             </div>
             <div className='propertyInfoColumn1'>
-                <div>Property type: Apartment</div>
-                <div>Rent: $700 per week</div>
-                <div>Available: 21st January</div>
-                <div>Amenities: Gym</div>
-                <div>Bedrooms: 2</div>
-                <div>Bathrooms: 1</div>
-                <div>Parking: 3</div>
-                <div>Pets Allowed: Yes</div>
-                <div>Property ID: 50005769</div>
+                <div>Property type: {propertyData.Property_type}</div>
+                <div>Rent: {propertyData.Rent} per week</div>
+                <div>Available: {propertyData.Available}</div>
+                <div>Amenities: {propertyData.Amenities}</div>
+                <div>Bedrooms: {propertyData.Bedrooms}</div>
+                <div>Bathrooms: {propertyData.Bathrooms}</div>
+                <div>Parking: {propertyData.Carparks}</div>
+                <div>Pets Allowed: {propertyData.Pets_allowed}</div>
+                <div>Property ID: {propertyData.Property_id}</div>
             </div>
             <div className='propertyInfoColumn2'>
-                <div>Washing Machine</div>
-                <div>Dryer</div>
-                <div>Household heys</div>
-                <div>Extractor fan</div>
-                <div>Shelving in lounge</div>
-                <div>Chairs and table on balcony</div>
-                <div>Wicker coffee table in lounge</div>
-                <div>Sofa</div>
+                {chattels.map((item, index) => (
+                    <div key={(index)}>{item}</div>
+                ))}
             </div>
 
             <div className='carouselHeader'>
@@ -86,9 +75,9 @@ function PropertyPageBody() {
             <div className='propertyManagerCard'>
                 <img className='propertyManagerImg' src={propertyManagerPhoto} alt=''></img>
                 <div className='propertyManagerText'>
-                    <div className = 'propertyManagerName'>Holly Wood<br></br>Property Manager</div>
-                    <div className = 'propertyManagerNumber'>021 334 694</div>
-                    <div className = 'emailBtn'>Email Agent</div>
+                    <div className='propertyManagerName'>{propertyData.Property_manager_name}<br></br>Property Manager</div>
+                    <div className='propertyManagerNumber'>{propertyData.Property_manager_number}</div>
+                    <div className='emailBtn'>Email Agent</div>
                 </div>
             </div>
             <div className='btnContainer2'>
@@ -96,7 +85,7 @@ function PropertyPageBody() {
                 <div className='bookViewingBtn'>Book a Viewing</div>
                 <div className='applyBtn'>Apply Now</div>
             </div>
-            <div className = 'awardsHeader'>Awards</div>
+            <div className='awardsHeader'>Awards</div>
             <img className='awardsLogos' src={awardsLogos} alt=""></img>
 
         </>
@@ -104,3 +93,4 @@ function PropertyPageBody() {
 }
 
 export default PropertyPageBody
+
