@@ -1,11 +1,11 @@
 import '../styles/PropertyPageBody.css'
-import morningside_drive_photo from "../images/property_page/303-3_morningside_drive.png"
 import bedroomIcon from "../images/property_page/Bedroom.png"
 import bathroomIcon from "../images/property_page/Bathroom.png"
 import parkingIcon from "../images/property_page/Parking.png"
 import propertyManagerPhoto from "../images/property_page/Holly_Wood.png"
 import awardsLogos from "../images/property_page/Awards_Logos.png"
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 
 function PropertyPageBody() {
@@ -13,22 +13,24 @@ function PropertyPageBody() {
     const [chattels, setChattels] = useState([])
     const [propertySummary, setPropertySummary] = useState([])
     const [propertyData, setPropertyData] = useState([])
+    const {id} = useParams()
 
     //call the get api to get property data from the database
     useEffect(() => {
-        fetch('http://localhost:4000/propertypage')
+        fetch('http://localhost:4000/propertypage/:id')
             .then(response => response.json())
             .then((result) => {
-                setChattels(result[0].Chattels);
-                setPropertySummary(result[0].Property_summary);
-                setPropertyData(result[0]);
+                setChattels(result[id].Chattels);
+                setPropertySummary(result[id].Property_summary);
+                setPropertyData(result[id]);
+                console.log()
             }, []);
     });
 
-    return (
+    return ( 
         <>
         
-            <img className='propertyPhoto' src={propertyData.Property_image_url} alt=""></img>
+            <img className='propertyPhoto' src={propertyData.Property_image} alt=""></img>
             <div className='propertySummary'>
                 <div className='propertyAddress'><b>{propertyData.Address},</b> <br></br><b>{propertyData.Suburb}</b></div>
                 <div className='propertyRooms'>
@@ -73,7 +75,7 @@ function PropertyPageBody() {
             </div>
 
             <div className='propertyManagerCard'>
-                <img className='propertyManagerImg' src={propertyManagerPhoto} alt=''></img>
+                <img className='propertyManagerImg' src={propertyData.Property_manager_photo} alt=''></img>
                 <div className='propertyManagerText'>
                     <div className='propertyManagerName'>{propertyData.Property_manager_name}<br></br>Property Manager</div>
                     <div className='propertyManagerNumber'>{propertyData.Property_manager_number}</div>

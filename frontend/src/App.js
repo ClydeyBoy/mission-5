@@ -26,7 +26,7 @@ function App() {
       {/* <h1>{greeting}</h1>
       <h1>Hi</h1> */}
         <Routes>
-          <Route path="/propertypage" element={<PropertyPage />} />
+          <Route path="/propertypage/:id" element={<PropertyPage />} />
         </Routes>
 
 
