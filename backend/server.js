@@ -20,7 +20,7 @@ app.listen(4000, () => {
 //     response.send('Welcome to MongoDB API')
 // })
 
-app.get('/propertypage', (request, response) => {
+app.get('/propertypage/:id', (request, response) => {
     database.collection('Properties').find({}).toArray((error, result) => {
         if (error) throw error
         response.send(result)
