@@ -1,12 +1,13 @@
 import '../styles/Header.css'
 import companyLogo from "../images/property_page/Company_Logo.jpg"
+import { useParams, Link } from 'react-router-dom'
 
 function Header() {
     return (
         <>
             <div className='headerContainer'>
-                <img className='headerLogo' src={companyLogo} alt=""></img>
-                <div className = 'headerLinks'>
+                <Link to='/'><img className='headerLogo' src={companyLogo} alt=""></img></Link>
+                <div className='headerLinks'>
                     <div>Property Owners</div>
                     <div>Tenants</div>
                     <div>News</div>

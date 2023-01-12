@@ -17,7 +17,7 @@ function PropertyPageBody() {
 
     //call the get api to get property data from the database
     useEffect(() => {
-        fetch('http://localhost:4000/propertypage')
+        fetch('http://localhost:4000/propertypage/')
             .then(response => response.json())
             .then((result) => {
                 setPropertyData(result[id]);
@@ -25,6 +25,8 @@ function PropertyPageBody() {
                 setPropertySummary(result[id].property_summary);
             });
     }, []);
+
+    console.log(propertyData.property_image)
 
 
     return (

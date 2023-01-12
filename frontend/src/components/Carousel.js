@@ -2,60 +2,41 @@ import '../styles/Carousel.css'
 import new_windsor_road_photo from "../images/property_page/54_new_windsor_road.png"
 import halesowen_ave_photo from "../images/property_page/18_halesowen_ave.png"
 import western_springs_road_photo from "../images/property_page/11_western springs_road.png"
-import property4 from "../images/property_page/property4.jpg"
-import property5 from "../images/property_page/property5.jpg"
-import property6 from "../images/property_page/property6.jpg"
-import property7 from "../images/property_page/property7.png"
-import property8 from "../images/property_page/property8.jpg"
-import property9 from "../images/property_page/property9.jpeg"
+import napier_street_photo from "../images/property_page/4-23_napier_street.png"
+import kitchener_road_photo from "../images/property_page/23_kitchener_road.png"
+import fourth_avenue_photo from "../images/property_page/54_fourth_avenue.png"
+import school_road_photo from "../images/property_page/68_school_road.png"
+import first_street_photo from "../images/property_page/1_first_street.png"
+import morningside_drive_photo from "../images/property_page/303-3_morningside_drive.png"
 import arrowPrev from "../images/property_page/ArrowPrev.png"
 import arrowNext from "../images/property_page/ArrowNext.png"
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 function Carousel() {
 
-    const [propertyData, setPropertyData] = useState([])
-    const [randomNumbers, setRandomNumbers] = useState([]);
-    const {id} = useParams()
+    //call the get api to get property data from the database
+    useEffect(() => {
+        fetch('http://localhost:4000/propertypage')
+            .then(response => response.json())
+            .then((result) => {
+            });
+    }, []);
 
-    // //call the get api to get property data from the database
-    // useEffect(() => {
-    //     fetch('http://localhost:4000/propertypage/:id')
-    //         .then(response => response.json())
-    //         .then((result) => {
-    //             randomIndexGenerator(id);
-    //             setPropertyData(result);
-    //         }, []);
-    // });
+    const { id } = useParams()
 
-    // console.log(propertyData[0].Property_image)
-
-    const randomIndexGenerator = (id) => {
-        const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter(x => x !== id);
-        let randomNumbers = [];
-        for (let i = 0; i < 9; i++) {
-            let randomIndex = Math.floor(Math.random() * numbers.length);
-            let randomNumber = numbers[randomIndex];
-            randomNumbers.push(randomNumber);
-            numbers.splice(randomIndex, 1);
-        }
-        setRandomNumbers(randomNumbers)
-    }
-
-    console.log()
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const propertyImages = [
+        napier_street_photo,
+        fourth_avenue_photo,
+        kitchener_road_photo,
         new_windsor_road_photo,
         halesowen_ave_photo,
         western_springs_road_photo,
-        property4,
-        property5,
-        property6,
-        property7,
-        property8,
-        property9
+        school_road_photo,
+        morningside_drive_photo,
+        first_street_photo
     ];
 
     const prevSlide = () => {
@@ -87,13 +68,18 @@ function Carousel() {
 
     return (
         <div>
+
             <div className="carousel">
                 <button className='prevBtn' onClick={prevSlide}><img className='arrow' src={arrowPrev} alt='' /></button>
+
                 {displayedImages.map((image, index) => (
                     <div key={(index + currentIndex + 1)} className="carouselCard">
-                        <img src={image} alt={`Property ${index + currentIndex + 1}`}></img>
+                        <Link to={`/propertypage/${index + currentIndex + 1}`} onClick = {window.location.reload}>
+                            <img src={image} alt={`Property ${index + currentIndex + 1}`}></img>
+                        </Link>
                     </div>
                 ))}
+
                 <button className='nextBtn' onClick={nextSlide}><img className='arrow' src={arrowNext} alt='' /></button>
                 <div className='dotsContainer'>
                     <div className={currentIndex === 0 ? 'dotRed' : 'dot1'} onClick={goToSlide1}>⬤</div>
@@ -106,3 +92,39 @@ function Carousel() {
 }
 
 export default Carousel
+
+
+
+
+
+
+{/* <div className="carouselCard">
+                        <Link to = '/propertypage/1' onClick = {window.location.reload}>
+                        <img src={napier_street_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/2' onClick = {window.location.reload}>
+                        <img src={fourth_avenue_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/3' onClick = {window.location.reload}>
+                        <img src={kitchener_road_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/4' onClick = {window.location.reload}>
+                        <img src={new_windsor_road_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/5' onClick = {window.location.reload}>
+                        <img src={halesowen_ave_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/5' onClick = {window.location.reload}>
+                        <img src={western_springs_road_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/7' onClick = {window.location.reload}>
+                        <img src={school_road_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/8' onClick = {window.location.reload}>
+                        <img src={first_street_photo} alt=''></img>
+                        </Link>
+                        <Link to = '/propertypage/0' onClick = {window.location.reload}>
+                        <img src={morningside_drive_photo} alt=''></img>
+                        </Link>
+                    </div> */}
+
