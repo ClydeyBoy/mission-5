@@ -1,35 +1,32 @@
 const express = require('express');
-const cors = require('cors');
-const MongoClient = require('mongodb').MongoClient
-const workoutRoutes = require(.'')
+const propertyRoutes = require('./routes/properties')
+const mongoose = require('mongoose')
+const cors = require('cors')
 
+//expres app
 const app = express()
 
-app.use(cors());
-app.use(express.json())
-let database
 
 //middleware
-app.use((request,response, next) => {
-    console.log(request.path, request.method)
-})
-
-app.listen(4000, () => {
-    MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true }, (error, result) => {
-        if (error) throw error
-        database = result.db('mission-5')
-        console.log('connection successful')
-    })
-})
-
-// app.get('/', (request, response) => {
-//     response.send('Welcome to MongoDB API')
+app.use(cors());
+app.use(express.json())
+// app.use((request, response, next) => {
+//     console.log(request.path, request.method)
+//     next()
 // })
 
-app.get('/propertypage/:id', (request, response) => {
-    database.collection('Properties').find({}).toArray((error, result) => {
-        if (error) throw error
-        response.send(result)
+//routes
+app.use('/propertypage', propertyRoutes)
+
+//connect to db
+mongoose.connect('mongodb://localhost:27017/mission-5')
+.then(() => {
+    app.listen(4000, () => {
+        console.log('connected to DB and listening on port 4000')
     })
 })
+.catch((error) => {
+    console.log(error)
+})
+
 
