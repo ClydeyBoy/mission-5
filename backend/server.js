@@ -1,12 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient
+const workoutRoutes = require(.'')
 
 const app = express()
 
 app.use(cors());
 app.use(express.json())
 let database
+
+//middleware
+app.use((request,response, next) => {
+    console.log(request.path, request.method)
+})
 
 app.listen(4000, () => {
     MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true }, (error, result) => {
