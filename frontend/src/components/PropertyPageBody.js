@@ -13,30 +13,30 @@ function PropertyPageBody() {
     const [chattels, setChattels] = useState([])
     const [propertySummary, setPropertySummary] = useState([])
     const [propertyData, setPropertyData] = useState([])
-    const {id} = useParams()
+    const { id } = useParams()
 
     //call the get api to get property data from the database
     useEffect(() => {
-        fetch('http://localhost:4000/propertypage/:id')
+        fetch('http://localhost:4000/propertypage')
             .then(response => response.json())
             .then((result) => {
-                setChattels(result[id].Chattels);
-                setPropertySummary(result[id].Property_summary);
                 setPropertyData(result[id]);
-                console.log()
-            }, []);
-    });
+                setChattels(result[id].chattels);
+                setPropertySummary(result[id].property_summary);
+            });
+    }, []);
 
-    return ( 
+
+    return (
         <>
-        
-            <img className='propertyPhoto' src={propertyData.Property_image} alt=""></img>
+
+            <img className='propertyPhoto' src={propertyData.property_image} alt=""></img>
             <div className='propertySummary'>
-                <div className='propertyAddress'><b>{propertyData.Address},</b> <br></br><b>{propertyData.Suburb}</b></div>
+                <div className='propertyAddress'><b>{propertyData.address},</b> <br></br><b>{propertyData.suburb}</b></div>
                 <div className='propertyRooms'>
-                    <div>{propertyData.Bedrooms}<img className='bedroomIcon' src={bedroomIcon} alt=""></img></div>
-                    <div>{propertyData.Bathrooms}<img className='bathroomIcon' src={bathroomIcon} alt=""></img></div>
-                    <div>{propertyData.Carparks}<img className='parkingIcon' src={parkingIcon} alt=""></img></div>
+                    <div>{propertyData.bedrooms}<img className='bedroomIcon' src={bedroomIcon} alt=""></img></div>
+                    <div>{propertyData.bathrooms}<img className='bathroomIcon' src={bathroomIcon} alt=""></img></div>
+                    <div>{propertyData.carparks}<img className='parkingIcon' src={parkingIcon} alt=""></img></div>
                 </div>
             </div>
             <div className='propertyDescription'>
@@ -54,19 +54,19 @@ function PropertyPageBody() {
                 <div>Chattels</div>
             </div>
             <div className='propertyInfoColumn1'>
-                <div>Property type: {propertyData.Property_type}</div>
-                <div>Rent: {propertyData.Rent} per week</div>
-                <div>Available: {propertyData.Available}</div>
-                <div>Amenities: {propertyData.Amenities}</div>
-                <div>Bedrooms: {propertyData.Bedrooms}</div>
-                <div>Bathrooms: {propertyData.Bathrooms}</div>
-                <div>Parking: {propertyData.Carparks}</div>
-                <div>Pets Allowed: {propertyData.Pets_allowed}</div>
-                <div>Property ID: {propertyData.Property_id}</div>
+                <div>Property type: {propertyData.property_type}</div>
+                <div>Rent: {propertyData.rent} per week</div>
+                <div>Available: {propertyData.available}</div>
+                <div>Amenities: {propertyData.amenities}</div>
+                <div>Bedrooms: {propertyData.bedrooms}</div>
+                <div>Bathrooms: {propertyData.bathrooms}</div>
+                <div>Parking: {propertyData.carparks}</div>
+                <div>Pets Allowed: {propertyData.pets_allowed}</div>
+                <div>Property ID: {propertyData.property_id}</div>
             </div>
             <div className='propertyInfoColumn2'>
                 {chattels.map((item, index) => (
-                    <div key={(index)}>{item}</div>
+                    <div key={index}>{item}</div>
                 ))}
             </div>
 
@@ -75,10 +75,10 @@ function PropertyPageBody() {
             </div>
 
             <div className='propertyManagerCard'>
-                <img className='propertyManagerImg' src={propertyData.Property_manager_photo} alt=''></img>
+                <img className='propertyManagerImg' src={propertyData.property_manager_image} alt=''></img>
                 <div className='propertyManagerText'>
-                    <div className='propertyManagerName'>{propertyData.Property_manager_name}<br></br>Property Manager</div>
-                    <div className='propertyManagerNumber'>{propertyData.Property_manager_number}</div>
+                    <div className='propertyManagerName'>{propertyData.property_manager_name}<br></br>Property Manager</div>
+                    <div className='propertyManagerNumber'>{propertyData.property_manager_number}</div>
                     <div className='emailBtn'>Email Agent</div>
                 </div>
             </div>
@@ -93,6 +93,8 @@ function PropertyPageBody() {
         </>
     )
 }
+
+
 
 export default PropertyPageBody
 

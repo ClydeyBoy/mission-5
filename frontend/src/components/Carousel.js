@@ -10,9 +10,40 @@ import property8 from "../images/property_page/property8.jpg"
 import property9 from "../images/property_page/property9.jpeg"
 import arrowPrev from "../images/property_page/ArrowPrev.png"
 import arrowNext from "../images/property_page/ArrowNext.png"
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 function Carousel() {
+
+    const [propertyData, setPropertyData] = useState([])
+    const [randomNumbers, setRandomNumbers] = useState([]);
+    const {id} = useParams()
+
+    // //call the get api to get property data from the database
+    // useEffect(() => {
+    //     fetch('http://localhost:4000/propertypage/:id')
+    //         .then(response => response.json())
+    //         .then((result) => {
+    //             randomIndexGenerator(id);
+    //             setPropertyData(result);
+    //         }, []);
+    // });
+
+    // console.log(propertyData[0].Property_image)
+
+    const randomIndexGenerator = (id) => {
+        const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter(x => x !== id);
+        let randomNumbers = [];
+        for (let i = 0; i < 9; i++) {
+            let randomIndex = Math.floor(Math.random() * numbers.length);
+            let randomNumber = numbers[randomIndex];
+            randomNumbers.push(randomNumber);
+            numbers.splice(randomIndex, 1);
+        }
+        setRandomNumbers(randomNumbers)
+    }
+
+    console.log()
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const propertyImages = [
