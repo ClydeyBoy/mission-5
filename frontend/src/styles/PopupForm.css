@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.popupForm {
+    position: fixed;
+    height: 720px;
+    width: 900px;
+    background-color: white;
+    outline: 2px black outset;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding-left: 46px;
+    padding-right: 47px;
+    box-sizing: border-box;
+}
+
+.popupFormHeader {
+    position: absolute;
+    top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.popupFormParagraph {
+    position: absolute;
+    top: 83px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left;
+}
+
+.closeBtn {
+    position: absolute;
+    height: 14.3px;
+    width: 14.3px;
+    left: 858px;
+    top: 33.3px;
+    cursor: pointer
+}
+
+.popupBtnContainer {
+    position: absolute;
+    display: flex;
+    width: 98.8%;
+    gap: 23px;
+    justify-content: right;
+    top: -65px;
+    line-height: 45px;
+    /* outline: 2px black outset; */
+}
+
+.applyForRentalBtn {
+    background-color: #8E8E8E;
+    height: 47px;
+    width: 197px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.createAccountBtn {
+    background-color: #D90C1E;
+    height: 47px;
+    width: 333px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.tenancyApplication {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    top: 244px;
+}
+
+.formSubHeader {
+    text-align: left;
+}
+
+.tenancyApplication label {
+    margin-right: 7px;
+    /* outline: 1px black outset; */
+    float: left;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+}
+
+.tenancyApplication input {
+    border: 1px solid black;
+    float: left;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+}
+
+#propertyAddress {
+    width: 630px;
+}
+
+#moveInDate {
+    width: 228px;
+    margin-right: 25px;
+}
+
+#rentalPeriod {
+    position: relative;
+    width: 126px;
+}
+
+#weeklyRent {
+    width: 144px;
+}
+
+#formButtons {
+    margin-right: 16px;
+    width: 53px;
+    background-color: white;
+}
+
+input[type='radio'] {
+    box-sizing: border-box;
+    appearance: none;
+    background: white;
+    outline: 2px solid #333;
+    border: 3px solid white;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px
+}
+
+input[type='radio']:checked {
+    background: black;
+}
+
+.viewing {
+    margin-left: 504px;
+}
+
+#viewing {
+    margin-top: 8px;
+}
+
+#fullName {
+    width: 699px;
+    position: relative;
+}
+
+#dateOfBirth {
+    width: 199px;
+    margin-right: 16px;
+    padding: 2.8px;
+}
+
+#emailAddress {
+    width: 499px;
+}
+
+#mobileNumber {
+    width: 170px;
+    margin-right: 16px;
+    /* margin-bottom: 10px; */
+}
+
+#phoneNumber {
+    width: 512px;
+}
+
+.formSubHeader2 {
+    position: relative;
+    margin-top: 105px;
+    text-align: left;
+    /* outline: 2px black outset; */
+}
+
+#refereeName {
+    width: 294px;
+    margin-right: 16px;
+}
+
+#refereeRelationship {
+    width: 255px;
+}
+
+#refereePhone {
+    width: 184px;
+    margin-right: 16px;
+}
+
+#refereeEmail {
+    width: 505px;
+}
+
+#occupation {
+    width: 367px;
+    margin-right: 16px;
+}
+
+#weeklyIncome {
+    width: 250px;
+}
+
+#landlordAddress {
+    width: 743px;
+}
+
+#timeAtAdress {
+    width: 126px;
+    margin-right: 16px;
+}
+
+#reasonForLeaving {
+    width: 430px;
+}

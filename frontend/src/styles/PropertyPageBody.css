@@ -104,18 +104,21 @@
     background-color: black;
     height: 100%;
     width: 17.97vw;
+    cursor: pointer;
 }
 
 .bookViewingBtn {
     background-color: #8E8E8E;
     height: 100%;
     width: 17.03vw;
+    cursor: pointer;
 }
 
 .applyBtn {
     background-color: #D90C1E;
     height: 100%;
     width: 12.81vw;
+    cursor: pointer;
 }
 
 .propertyInfoHeadings {

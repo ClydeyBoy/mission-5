@@ -2,7 +2,7 @@ import '../styles/PropertyPageBody.css'
 import bedroomIcon from "../images/property_page/Bedroom.png"
 import bathroomIcon from "../images/property_page/Bathroom.png"
 import parkingIcon from "../images/property_page/Parking.png"
-import propertyManagerPhoto from "../images/property_page/Holly_Wood.png"
+import PopupForm from './PopupForm'
 import awardsLogos from "../images/property_page/Awards_Logos.png"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -13,6 +13,7 @@ function PropertyPageBody() {
     const [chattels, setChattels] = useState([])
     const [propertySummary, setPropertySummary] = useState([])
     const [propertyData, setPropertyData] = useState([])
+    const [popupForm, setPopupForm] = useState(false)
     const { id } = useParams()
 
     //call the get api to get property data from the database
@@ -28,9 +29,9 @@ function PropertyPageBody() {
 
     console.log(propertyData.property_image)
 
-
     return (
         <>
+            <PopupForm trigger={popupForm} setTrigger = {setPopupForm}></PopupForm>
 
             <img className='propertyPhoto' src={propertyData.property_image} alt=""></img>
             <div className='propertySummary'>
@@ -49,7 +50,7 @@ function PropertyPageBody() {
             <div className='btnContainer'>
                 <div className='watchlistBtn'>Add to Watchlist</div>
                 <div className='bookViewingBtn'>Book a Viewing</div>
-                <div className='applyBtn'>Apply Now</div>
+                <div className='applyBtn' onClick = {() => setPopupForm(true)}>Apply Now</div>
             </div>
             <div className='propertyInfoHeadings'>
                 <div>Property Details</div>

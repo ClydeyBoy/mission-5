@@ -1,0 +1,15 @@
+.createAccountBox {
+    position: fixed;
+    height: 460px;
+    width: 700px;
+    background-color: white;
+    outline: 2px black outset;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    padding-left: 36px;
+    padding-right: 51px;
+    box-sizing: border-box;
+}
