@@ -3,26 +3,26 @@ const mongoose = require('mongoose')
 
 //get all properties
 const getProperties = async (request, response) => {
-    const properties = await Property.find()
+    const properties = await Property.find({})
     response.status(200).json(properties)
 }
 
 
-// // get a single property
-// const getProperty = async (request, response) => {
-//     const { id } = request.params
+// get a single property
+const getProperty = async (request, response) => {
+    const { id } = request.params
 
-//     if (!mongoose.Types.ObjectId.isValid(id)) {
-//         return response.status(404).json({error: 'no such property'})
-//     }
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return response.status(404).json({error: 'no such property'})
+    }
 
-//     const property = await Property.findById(id)
+    const property = await Property.findById(id)
 
-//     if (!property) {
-//         return response.status(404).json({ error: 'No such property' })
-//     }
-//     response.status(200).json(property)
-// }
+    if (!property) {
+        return response.status(404).json({ error: 'No such property' })
+    }
+    response.status(200).json(property)
+}
 
 
 // //create a new property
@@ -40,6 +40,6 @@ const getProperties = async (request, response) => {
 
 module.exports = {
     // createProperty,
-    getProperties
-    // getProperty
+    getProperties,
+    getProperty
 }
