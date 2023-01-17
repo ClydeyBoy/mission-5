@@ -2,7 +2,7 @@
 
 .popupForm {
     position: fixed;
-    height: 720px;
+    height: 767px;
     width: 900px;
     background-color: white;
     /* outline: 2px black outset; */
@@ -157,7 +157,7 @@ input[type='radio']:checked {
     margin-top: 8px;
 }
 
-#fullName {
+#applicantName {
     width: 699px;
     position: relative;
 }
@@ -168,17 +168,17 @@ input[type='radio']:checked {
     padding: 2.8px;
 }
 
-#emailAddress {
+#applicantEmail {
     width: 499px;
 }
 
-#mobileNumber {
+#applicantMobile {
     width: 170px;
     margin-right: 16px;
     /* margin-bottom: 10px; */
 }
 
-#phoneNumber {
+#applicantPhone {
     width: 512px;
 }
 
@@ -198,18 +198,29 @@ input[type='radio']:checked {
     width: 255px;
 }
 
-#refereePhone {
+#refereePhone, #employerPhone {
     width: 184px;
     margin-right: 16px;
 }
 
-#refereeEmail {
+#refereeEmail, #employerEmail {
     width: 505px;
+}
+
+#employerName {
+    width: 600px;
 }
 
 #occupation {
     width: 367px;
     margin-right: 16px;
+}
+
+.formSubHeader3 {
+    position: relative;
+    margin-top: 164px;
+    text-align: left;
+    /* outline: 2px black outset; */
 }
 
 #weeklyIncome {
