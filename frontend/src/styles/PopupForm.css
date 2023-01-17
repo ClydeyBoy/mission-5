@@ -5,12 +5,12 @@
     height: 720px;
     width: 900px;
     background-color: white;
-    outline: 2px black outset;
+    /* outline: 2px black outset; */
     display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 3;
     padding-left: 46px;
     padding-right: 47px;
     box-sizing: border-box;
@@ -227,4 +227,12 @@ input[type='radio']:checked {
 
 #reasonForLeaving {
     width: 430px;
+}
+
+.popupFormGreyedArea {
+    position: fixed;
+    background-color: rgba(128,128,128,0.6);
+    width: 100vw;
+    height:100vh;
+    z-index: 2;
 }

@@ -5,9 +5,13 @@ import { useParams, Link } from 'react-router-dom'
 function CreateAccount(props) {
 
     return (props.trigger2) ? (
-
-        <div className='createAccountBox'>
-            <img className='closeBtn' src={closeBtn} alt='' onClick={() => props.setTrigger2(false)}></img>
+        <div className='signUpFormGreyedArea'>
+            <div className='createAccountBoxOuter'>
+                <div className='createAccountBoxInner'>
+                    <div className='signUpFormHeader'>Register for MyMetro</div>
+                </div>
+                <img className='closeBtn2' src={closeBtn} alt='' onClick={() => props.setTrigger2(false)}></img>
+            </div>
         </div>
     ) : '';
 }

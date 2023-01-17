@@ -3,6 +3,7 @@ import bedroomIcon from "../images/property_page/Bedroom.png"
 import bathroomIcon from "../images/property_page/Bathroom.png"
 import parkingIcon from "../images/property_page/Parking.png"
 import PopupForm from './PopupForm'
+import CreateAccount from './CreateAccount'
 import awardsLogos from "../images/property_page/Awards_Logos.png"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
@@ -14,6 +15,7 @@ function PropertyPageBody() {
     const [propertySummary, setPropertySummary] = useState([])
     const [propertyData, setPropertyData] = useState([])
     const [popupForm, setPopupForm] = useState(false)
+    const [createAccount, setCreateAccount] = useState(false)
     const { id } = useParams()
 
     //call the get api to get property data from the database
@@ -31,8 +33,9 @@ function PropertyPageBody() {
 
     return (
         <>
-            <PopupForm trigger={popupForm} setTrigger = {setPopupForm}></PopupForm>
 
+            <PopupForm trigger={popupForm} setTrigger = {setPopupForm}></PopupForm>
+            <CreateAccount trigger2={createAccount} setTrigger2={setCreateAccount}></CreateAccount>
             <img className='propertyPhoto' src={propertyData.property_image} alt=""></img>
             <div className='propertySummary'>
                 <div className='propertyAddress'><b>{propertyData.address},</b> <br></br><b>{propertyData.suburb}</b></div>
@@ -48,7 +51,7 @@ function PropertyPageBody() {
                 ))}
             </div>
             <div className='btnContainer'>
-                <div className='watchlistBtn'>Add to Watchlist</div>
+                <div className='watchlistBtn' onClick={() => setCreateAccount(true)}>Add to Watchlist</div>
                 <div className='bookViewingBtn'>Book a Viewing</div>
                 <div className='applyBtn' onClick = {() => setPopupForm(true)}>Apply Now</div>
             </div>
