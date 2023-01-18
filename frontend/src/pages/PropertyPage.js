@@ -7,6 +7,7 @@ import PropertyPageBody from '../components/PropertyPageBody';
 
  const PropertyPage = () => {
   
+  //showing all components required for the property page
   return (
     <div>
       <Header></Header>

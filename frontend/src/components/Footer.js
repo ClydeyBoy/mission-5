@@ -5,7 +5,7 @@ import instagram from "../images/property_page/Instagram.png"
 import twitter from "../images/property_page/Twitter.png"
 import linkedin from "../images/property_page/Linkedin.png"
 
-
+//Footer divided into three main columns as shown below
 function Footer() {
     return (
         <>
@@ -31,11 +31,12 @@ function Footer() {
                 <div className='footerTextColumn3'>
                     Subscribe to our Newsletter
                 </div>
+                {/* Links to social media */}
                 <div className='socialMediaIcons'>
-                    <img src={facebook} alt=""></img>
-                    <img src={instagram} alt=""></img>
-                    <img src={twitter} alt=""></img>
-                    <img src={linkedin} alt=""></img>
+                <a href='https://www.facebook.com/'><img src={facebook} alt=""></img></a>
+                <a href='https://www.instagram.com/'><img src={instagram} alt=""></img></a>
+                <a href='https://twitter.com/'><img src={twitter} alt=""></img></a>
+                <a href='https://www.linkedin.com'><img src={linkedin} alt=""></img></a>
                 </div>
                 <div id='copyrightText'>
                     © 2022 Metro NZ Property Management
@@ -46,3 +47,4 @@ function Footer() {
 }
 
 export default Footer
+

@@ -46,6 +46,7 @@
     font-weight: 600;
     font-size: 1.09vw;
     text-align: left;
+    cursor: pointer;
 }
 
 .footerTextColumn3 {
@@ -57,6 +58,7 @@
     font-weight: 600;
     font-size: 1.09vw;
     text-align: left;
+    cursor: pointer;
 }
 
 .socialMediaIcons {

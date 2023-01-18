@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import PropertyPage from './pages/PropertyPage'
+import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -19,15 +20,16 @@ function App() {
   // });
 
 
-
+//paths for the various pages in the application
   return (
     <div className="App">
 
       {/* <h1>{greeting}</h1>
       <h1>Hi</h1> */}
-        <Routes>
-          <Route path="/propertypage/:id" element={<PropertyPage />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/propertypage/:id" element={<PropertyPage />} />
+      </Routes>
 
 
 

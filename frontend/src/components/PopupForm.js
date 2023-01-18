@@ -8,6 +8,7 @@ import { useParams, Link } from 'react-router-dom'
 
 function PopupForm(props) {
 
+    //creating states to store the entries of all the fields in the popup tenant application form
     const [createAccount, setCreateAccount] = useState(false)
     const [propertyAddress, setPropertyAddress] = useState('')
     const [moveInDate, setMoveInDate] = useState('')
@@ -33,6 +34,7 @@ function PopupForm(props) {
     const [reasonForLeaving, setReasonForLeaving] = useState(null)
     const [error, setError] = useState('')
 
+    //creating a function to post the entries from the tenant application form to the backend server
     const handleSubmit = async (e) => {
         e.preventDefault()
         const application = {
@@ -59,7 +61,8 @@ function PopupForm(props) {
         }
     }
 
-
+    //tenant application form appears only if trigger is true. 
+    //The trigger is activated when the user clicks on of the associated buttons
     return (props.trigger) ? (
         <div className='popupFormGreyedArea'>
             <div className='popupForm'>
@@ -70,6 +73,8 @@ function PopupForm(props) {
                     <li>Rental property watchlist to help you narrow your search down</li>
                     <li>Notifications of new listings</li>
                 </div>
+
+                 {/* Form tracks all changes in fields and sends them to the associated useState functions  */}
 
                 <form className='tenancyApplication' onSubmit={handleSubmit}>
                     <div className='popupBtnContainer'>
@@ -177,10 +182,10 @@ function PopupForm(props) {
                         <input type='text' id='reasonForLeaving' name='reasonForLeaving'
                             onChange={(e) => setReasonForLeaving(e.target.value)} value={reasonForLeaving}></input>
                     </div>
-
-
                 </form>
+                {/* Close button to close the form */}
                 <img className='closeBtn' src={closeBtn} alt='' onClick={() => props.setTrigger(false)}></img>
+                {/* Calling the CreateAccount component to allow the user to sign in when the create account button is clicked */}
                 <CreateAccount trigger2={createAccount} setTrigger2={setCreateAccount}></CreateAccount>
             </div >
         </div >

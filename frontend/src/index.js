@@ -10,7 +10,7 @@ import { AuthContext, AuthContextProvider } from './context/AuthContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-
+//wrapping the App tag in the AuthContextProvider so that the whole application has access to the Auth Context.
     <BrowserRouter>
         <AuthContextProvider>
             <App />

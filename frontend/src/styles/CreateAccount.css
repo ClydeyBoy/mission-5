@@ -72,7 +72,7 @@
 .createAccount label {
     position: relative;
     display: inline-block;
-    top: -100px;
+    top: -140px;
     /* outline: 1px black outset; */
     margin-top: 15px;
     margin-bottom: 15px;
@@ -81,7 +81,7 @@
 
 .createAccount input {
     position: relative;
-    top: -100px;
+    top: -140px;
     margin-top: 15px;
     margin-bottom: 15px;
     width: 365px;
@@ -105,15 +105,31 @@
 }
 
 #passwordLabel {
-    top: -109px
+    top: -149px
 }
 
 #passwordGuide {
     position: relative;
-    top: -185px;
+    top: -225px;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 400;
     text-align: left;
+
+}
+
+.createAccount button {
+    position: absolute;
+    top:120px;
+    left: 392px;
+    width: 228px;
+    height: 67px;
+    background-color: #d90c1e;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
 
 }

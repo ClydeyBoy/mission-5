@@ -28,5 +28,6 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1.56vw;
+    cursor: pointer;
     /* outline: 2px red outset; */
 }
