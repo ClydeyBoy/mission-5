@@ -10,6 +10,7 @@ const userSchema = new Schema({
         required: true,
         unique: true
     },
+
     password: {
         type: String,
         required: true,
@@ -29,7 +30,7 @@ userSchema.statics.signup = async function(email, password) {
     if(!validator.isStrongPassword(password)) {
         throw Error('Password not strong enough')
     }
-
+    
     const exists = await this.findOne({ email })
     if (exists) {
         throw Error('email already in use')
