@@ -84,3 +84,18 @@
     font-size: 1.09vw;
     text-align: center;
 }
+
+.logout {
+    position: absolute;
+    top: 10.71vw;
+    left: 6.33vw;
+    background-color: #D90C1E;
+    height: 3.36vw;
+    width: 7.14vw;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}

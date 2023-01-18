@@ -4,13 +4,22 @@ import facebook from "../images/property_page/Facebook.png"
 import instagram from "../images/property_page/Instagram.png"
 import twitter from "../images/property_page/Twitter.png"
 import linkedin from "../images/property_page/Linkedin.png"
+import {useLogout} from '../hooks/useLogout'
+
 
 //Footer divided into three main columns as shown below
 function Footer() {
+    
+    const {logout} = useLogout()
+    const handleClick = () => {
+        logout()
+    }
+
     return (
         <>
             <div className='footerContainer'>
-                <img className='footerLogo' src={companyLogo} alt=""></img>
+                <div><img className='footerLogo' src={companyLogo} alt=""></img>
+                <button className='logout' onClick = {handleClick}>Logout</button></div> 
                 <div className='footerTextColumn1'>
                     Level 33, ANZ Centre <br></br>
                     23-29 Albert St <br></br>
