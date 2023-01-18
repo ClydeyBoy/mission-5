@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .createAccountBoxOuter {
     position: fixed;
     height: 545px;
@@ -11,6 +13,7 @@
     box-sizing: border-box;
 }
 
+
 .createAccountBoxInner {
     position: fixed;
     height: 461px;
@@ -22,8 +25,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    padding-left: 36px;
-    padding-right: 51px;
+    padding-right: 36px;
+    padding-left: 51px;
     box-sizing: border-box;
 }
 
@@ -38,7 +41,7 @@
 
 .signUpFormGreyedArea {
     position: fixed;
-    background-color: rgba(128,128,128,0.4);
+    background-color: rgba(128, 128, 128, 0.4);
     height: 100%;
     width: 100%;
     z-index: 3;
@@ -53,4 +56,64 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 36px;
+    /* outline: 1px black outset; */
+    height: 44px;
+}
+
+.createAccount {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    top: 244px;
+    text-align: left
+}
+
+.createAccount label {
+    position: relative;
+    display: inline-block;
+    top: -100px;
+    /* outline: 1px black outset; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.createAccount input {
+    position: relative;
+    top: -100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 365px;
+    font-size: 21px;
+}
+
+#emailRegistraition {
+    left: 22%
+}
+
+#confirmEmail {
+    left: 9.8%
+}
+
+#passwordRegistration {
+    left: 28.4%
+}
+
+#confirmPassword {
+    left: 5.5%
+}
+
+#passwordLabel {
+    top: -109px
+}
+
+#passwordGuide {
+    position: relative;
+    top: -185px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: left;
+
 }
