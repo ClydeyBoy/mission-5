@@ -1,7 +1,7 @@
 const Application = require('../models/sumbitApplicationModel')
 const mongoose = require('mongoose')
 
-//create a new application
+//create a new tenancy application
 const createApplication = async (request, response) => {
     const { propertyAddress, moveInDate, rentalPeriod, weeklyRent, viewing, applicantName, dateOfBirth, applicantEmail, applicantMobile, applicantPhone, refereeName, refereeRelationship, 
         refereePhone, refereeEmail, employerName, employerPhone, employerEmail, occupation, weeklyIncome, landlordAddress, timeAtAdress, reasonForLeaving} = request.body

@@ -12,12 +12,14 @@ const getProperties = async (request, response) => {
 const getProperty = async (request, response) => {
     const { id } = request.params
 
+//check if the requested property exists
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return response.status(404).json({error: 'no such property'})
     }
 
     const property = await Property.findById(id)
-
+    
+//check if the requested property exists
     if (!property) {
         return response.status(404).json({ error: 'No such property' })
     }

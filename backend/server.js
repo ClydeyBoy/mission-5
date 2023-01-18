@@ -13,10 +13,7 @@ const app = express()
 //middleware
 app.use(cors());
 app.use(express.json())
-// app.use((request, response, next) => {
-//     console.log(request.path, request.method)
-//     next()
-// })
+
 
 //routes
 app.use('/propertypage', propertyRoutes)

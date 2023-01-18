@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
+//creating new schema to store property information
 const propertySchema = new Schema ({
     Address: {
         type: String,

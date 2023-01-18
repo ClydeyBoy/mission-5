@@ -4,7 +4,7 @@ const {createApplication} = require('../controllers/applicationController')
 
 const router = express.Router()
 
-//POST a new property
+//POST a new tenancy application
 router.post('/:id', createApplication)
 
 module.exports = router
