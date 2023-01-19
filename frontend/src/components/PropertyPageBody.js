@@ -18,6 +18,7 @@ function PropertyPageBody() {
     const [popupForm, setPopupForm] = useState(false)
     const [createAccount, setCreateAccount] = useState(false)
 
+
     //destructuring id from th useParams function
     const { id } = useParams()
 
@@ -39,7 +40,7 @@ function PropertyPageBody() {
             {/* Calling the tenancy application popup form and the signin forms when the associated buttons are clicked on the page */}
             <PopupForm trigger={popupForm} setTrigger={setPopupForm}></PopupForm>
             <CreateAccount trigger2={createAccount} setTrigger2={setCreateAccount}></CreateAccount>
-
+            
             {/* importing the property photo from the useState hook */}
             <img className='propertyPhoto' src={propertyData.property_image} alt=""></img>
 

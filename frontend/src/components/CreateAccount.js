@@ -50,11 +50,10 @@ function CreateAccount(props) {
 
     }
 
-    // const handleClick = () => {
-    //     if (user) {
-    //         <Navigate to = '/profilepage'/>
-    //     }
-    // }
+    //stops the user from using the sign up or login function if already logged in
+    if (user) {
+        props.setTrigger2(false);
+    }  
 
     //sign up form appears only if trigger is true. 
     //The trigger is activated when the user clicks on of the associated buttons

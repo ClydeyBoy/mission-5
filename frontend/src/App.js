@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/propertypage/:id" element={<PropertyPage />} />
-        <Route path="/profilepage" element={user ? <Profilepage/> : <Navigate to = '/'/>} />
+        <Route path="/profilepage" element={user ? <Profilepage/> : (<Navigate to = '/'/>)}  />
       </Routes>
 
 

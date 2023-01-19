@@ -44,6 +44,14 @@ function PopupForm(props) {
             landlordAddress, timeAtAdress, reasonForLeaving
         }
 
+        //throw an error if all fields not filled
+        if(!propertyAddress || !moveInDate || !rentalPeriod || !weeklyRent || !viewing || !applicantName || 
+            !dateOfBirth || !applicantEmail || !applicantMobile || !applicantPhone || !refereeName || 
+            !refereeRelationship || !refereePhone || !refereeEmail || !employerName || !employerPhone || !employerEmail ||
+            !occupation || !weeklyIncome || !landlordAddress || !timeAtAdress || !reasonForLeaving) {
+            window.alert('Please fill all fields of the tenancy application')
+        }
+
         const response = await fetch('http://localhost:4000/propertypage/:id', {
             method: 'POST',
             body: JSON.stringify(application),
@@ -58,6 +66,7 @@ function PopupForm(props) {
         if (response.ok) {
             setError(null)
             console.log('application has been added')
+            console.log(response)
         }
     }
 
@@ -79,7 +88,7 @@ function PopupForm(props) {
                 <form className='tenancyApplication' onSubmit={handleSubmit}>
                     <div className='popupBtnContainer'>
                         <button className='applyForRentalBtn' type='submit'>Just Apply for Rental</button>
-                        <div className='createAccountBtn' onClick={() => setCreateAccount(true)}>Create Account & Submit Application</div>
+                        <button className='createAccountBtn' type = 'submit' onClick={() => setCreateAccount(true)}>Create Account & Submit Application</button>
                     </div>
 
                     <div className='formSubHeader'><b>Property Details</b></div>
