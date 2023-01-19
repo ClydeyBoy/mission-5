@@ -35,5 +35,5 @@ mongoose.connect('mongodb://db/mission-5')
 // mongodb://localhost:27017/mission-5
 //mongodb://db/mission-5
 
-//
+//server
 
