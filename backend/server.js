@@ -21,7 +21,7 @@ app.use('/propertypage', applicationRoutes)
 app.use('/user', userRoutes)
 
 //connect to db
-mongoose.connect('/mongodb://db/mission-5')
+mongoose.connect('mongodb://db/mission-5') 
 .then(() => {
     app.listen(4000, () => {
         console.log('connected to DB and listening on port 4000')
@@ -34,4 +34,6 @@ mongoose.connect('/mongodb://db/mission-5')
 
 // mongodb://localhost:27017/mission-5
 //mongodb://db/mission-5
+
+//
 
