@@ -46,8 +46,30 @@ const propertySchema = new Schema ({
     Property_id: {
         type: String,
     },
-    // Chattels: [String]
-    // ,
+    Chattels1: {
+        type: String,
+    },
+    Chattels2: {
+        type: String,
+    },
+    Chattels3: {
+        type: String,
+    },
+    Chattels4: {
+        type: String,
+    },
+    Chattels5: {
+        type: String,
+    },
+    Chattels6: {
+        type: String,
+    },
+    Chattels7: {
+        type: String,
+    },
+    Chattels8: {
+        type: String,
+    },
     Property_manager_name: {
         type: String,
         // required: true
@@ -56,8 +78,24 @@ const propertySchema = new Schema ({
         type: String,
         // required: true
     },
-    // Property_summary: [String]
-    // ,
+    Property_summary_para1: {
+        type: String,
+    },
+    Property_summary_para2: {
+        type: String,
+    },
+    Property_summary_para3: {
+        type: String,
+    },
+    Property_summary_para4: {
+        type: String,
+    },
+    Property_summary_para5: {
+        type: String,
+    },
+    Property_summary_para6: {
+        type: String,
+    },
     Property_image: {
         type: String,
         // required: true
