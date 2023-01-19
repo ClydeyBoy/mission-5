@@ -5,6 +5,7 @@ import instagram from "../images/property_page/Instagram.png"
 import twitter from "../images/property_page/Twitter.png"
 import linkedin from "../images/property_page/Linkedin.png"
 import {useLogout} from '../hooks/useLogout'
+import { Link } from 'react-router-dom'
 
 
 //Footer divided into three main columns as shown below
@@ -19,7 +20,7 @@ function Footer() {
         <>
             <div className='footerContainer'>
                 <div><img className='footerLogo' src={companyLogo} alt=""></img>
-                <button className='logout' onClick = {handleClick}>Logout</button></div> 
+                <Link to = '/'><button className='logout' onClick = {handleClick}>Logout</button></Link></div> 
                 <div className='footerTextColumn1'>
                     Level 33, ANZ Centre <br></br>
                     23-29 Albert St <br></br>

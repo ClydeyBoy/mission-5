@@ -86,6 +86,8 @@
     margin-bottom: 15px;
     width: 365px;
     font-size: 21px;
+    border: none;
+    outline: 1px black outset;
 }
 
 #emailRegistraition {

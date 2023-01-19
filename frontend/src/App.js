@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import PropertyPage from './pages/PropertyPage'
 import Profilepage from './pages/ProfilePage'
 import Home from './pages/Home'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navigate, Routes, Route } from 'react-router-dom';
 
 
 function App() {
+
+  let user = localStorage.getItem("user");
 
   // const [greeting, setGreeting] = useState([])
 
@@ -30,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/propertypage/:id" element={<PropertyPage />} />
-        <Route path="/profilepage" element={<Profilepage/>} />
+        <Route path="/profilepage" element={user ? <Profilepage/> : <Navigate to = '/'/>} />
       </Routes>
 
 

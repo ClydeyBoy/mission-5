@@ -6,12 +6,14 @@ import validator from 'validator'
 
 function CreateAccount(props) {
 
+    let user = localStorage.getItem("user");
+
     //creating states to store the entries of the signup form
     const [email, setEmail] = useState('')
     const [confirmEmail, setConfirmEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
-
+    
     //importing and destructuring the custom useSignup hook
     const { signup, error, isLoading } = useSignup()
 
@@ -39,12 +41,20 @@ function CreateAccount(props) {
             window.alert("Password not strong enough");
             throw Error('Password not strong enough')
         }
-        await signup(email, password)
+        await signup(email, password);
+        props.setTrigger2(false)
 
         if (error) {
             window.alert(error);
         }
+
     }
+
+    // const handleClick = () => {
+    //     if (user) {
+    //         <Navigate to = '/profilepage'/>
+    //     }
+    // }
 
     //sign up form appears only if trigger is true. 
     //The trigger is activated when the user clicks on of the associated buttons
