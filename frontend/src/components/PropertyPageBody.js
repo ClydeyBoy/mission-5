@@ -12,8 +12,6 @@ import { useParams } from 'react-router-dom'
 function PropertyPageBody() {
 
     //creating use state hooks to store property data
-    const [chattels, setChattels] = useState([])
-    const [propertySummary, setPropertySummary] = useState([])
     const [propertyData, setPropertyData] = useState([])
     const [popupForm, setPopupForm] = useState(false)
     const [createAccount, setCreateAccount] = useState(false)
@@ -24,16 +22,14 @@ function PropertyPageBody() {
 
     //call the get api to get property data from the database when the component mounts
     useEffect(() => {
-        fetch('http://localhost:4000/propertypage/')
+        fetch('http://localhost:4000/propertypage')
             .then(response => response.json())
             .then((result) => {
-                setPropertyData(result[id]);
-                setChattels(result[id].chattels);
-                setPropertySummary(result[id].property_summary);
+                setPropertyData(result[0]);
             });
     }, []);
 
-    console.log(propertyData.property_image)
+    console.log(propertyData)
 
     return (
         <>
@@ -57,13 +53,20 @@ function PropertyPageBody() {
                 </div>
             </div>
 
-            {/* importing the property summary from the useState hook
-                The property summary info has been stored as an array in the database
-                As such a map function is called to remove the data from the array and display it in the front end */}
+           
             <div className='propertyDescription'>
-                {propertySummary.map((line, index) => (
-                    <div key={(index)}>{line}<br></br><br></br></div>
-                ))}
+                
+                    <div>Presenting a one-bedroom apartment that stands out from the rest. Walk in and the first thing you'll notice is the EPIC high ceiling stud. It creates a sense of spaciousness and style that you just don't find in most apartments.</div>
+                    <br></br>
+                    <div>The tidy kitchen and bathroom are in good condition and the bedroom is a generous size. The north facing balcony gives you plenty of sun and a spot for the summer BBQ, and ensures the apartment is bathed in light.</div>
+                    <br></br>
+                    <div>There's easy value to add if you want to polish it further and make something truly special. Or if you are a first home buyer looking for a city fringe pad, then this one is quite simply a cut above the rest.</div>
+                    <br></br>
+                    <div>The apartment comes with not 1, not 2, but 3 carparks, as well as being adjacent to the train line and city bus routes.</div>
+                    <br></br>
+                    <div>All this and located in what is unquestionably Auckland's hippest little suburb, Morningside. Take your pick from the cafes, craft beer spots, event venues and eateries all on your doorstep. The gym is just next door and it's a quick few minutes down the road to Westfield St Luke's for a spot of shopping.</div>
+                    <br></br>
+                    <div>This apartment is a cracker and worth putting at the top of your Xmas list.</div>
             </div>
 
             {/* creating buttons to display  the signup and tenancy application popup forms when clicked */}
@@ -90,13 +93,16 @@ function PropertyPageBody() {
                 <div>Property ID: {propertyData.property_id}</div>
             </div>
 
-            {/* importing the property chattels from the useState hook */}
-            {/* The property chattels info has been stored as an array in the database
-                As such a map function is called to remove the data from the array and display it in the front end */}
+           
             <div className='propertyInfoColumn2'>
-                {chattels.map((item, index) => (
-                    <div key={index}>{item}</div>
-                ))}
+                
+                    <div>Washing machine</div>
+                    <div>Dryer</div>
+                    <div>Extractor Fan</div>
+                    <div>Shelving in Lounge</div>
+                    <div>Chairs and table on balcony</div>
+                    <div>Wicker coffee table in lounge</div>
+                    <div>Sofa</div>
             </div>
 
             <div className='carouselHeader'>

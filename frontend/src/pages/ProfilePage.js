@@ -19,3 +19,5 @@ import { useAuthContext } from '../hooks/useAuthContext'
   }
   
   export default PropertyPage
+
+  

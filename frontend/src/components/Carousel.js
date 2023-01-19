@@ -74,9 +74,9 @@ function Carousel() {
 
                 {displayedImages.map((image, index) => (
                     <div key={(index + currentIndex + 1)} className="carouselCard">
-                        <Link to={`/propertypage/${index + currentIndex + 1}`} onClick = {window.location.reload}>
+                       
                             <img src={image} alt={`Property ${index + currentIndex + 1}`}></img>
-                        </Link>
+                        
                     </div>
                 ))}
 

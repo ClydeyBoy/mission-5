@@ -52,7 +52,7 @@ function PopupForm(props) {
             window.alert('Please fill all fields of the tenancy application')
         }
 
-        const response = await fetch('http://localhost:4000/propertypage/:id', {
+        const response = await fetch('http://localhost:4000/propertypage', {
             method: 'POST',
             body: JSON.stringify(application),
             headers: {
