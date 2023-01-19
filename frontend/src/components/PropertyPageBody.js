@@ -109,6 +109,7 @@ function PropertyPageBody() {
             <div className='carouselHeader'>
                 People who viewed this property also viewed
             </div>
+            
 
             {/* importing the property manager info from the useState hook */}
             <div className='propertyManagerCard'>

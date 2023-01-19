@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import {useEffect, useState} from 'react'
+import Carousel2 from '../components/Carousel2';
  const Home = () => {
   
 
@@ -11,7 +12,9 @@ import {useEffect, useState} from 'react'
  <Link to = '/propertypage'>Browse properties</Link>
  <br></br>
  <Link to = '/profilepage'>View Account</Link>
+ <Carousel2></Carousel2>
     </div>
+    
   )
 }
 

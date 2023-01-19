@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Carousel from '../components/Carousel';
+import Carousel2 from '../components/Carousel2';
 import { useState } from 'react';
 import PropertyPageBody from '../components/PropertyPageBody';
 
@@ -12,7 +12,7 @@ import PropertyPageBody from '../components/PropertyPageBody';
     <div>
       <Header></Header>
       <PropertyPageBody></PropertyPageBody>
-      <Carousel></Carousel>
+      <Carousel2></Carousel2>
       <Footer></Footer>
     </div>
   )
