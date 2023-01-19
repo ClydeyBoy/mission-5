@@ -6,42 +6,42 @@ const Schema = mongoose.Schema
 const submitApplicationSchema = new Schema ({
     propertyAddress: {
         type: String,
-        // required: true
+        required: true
     },
     moveInDate: {
         type: String,
-        // required: true
+        required: true
     },
     rentalPeriod: {
         type: String,
-        // required: true
+        required: true
     },
     weeklyRent: {
         type: String,
-        // required: true
+        required: true
     },
     viewing: {
         type: String,
-        // required: true
+        required: true
     },
     applicantName: {
         type: String,
-        // required: true
+        required: true
     },
     dateOfBirth: {
         type: Date,
-        // required: true
+        required: true
     },
     applicantEmail: {
         type: String,
-        // required: true
+        required: true
     },
     applicantMobile: {
         type: String,
     },
     applicantPhone: {
         type: String,
-        // required: true
+        required: true
     },
     refereeName: {
         type: String,
@@ -51,43 +51,43 @@ const submitApplicationSchema = new Schema ({
     },
     refereePhone: {
         type: String,
-        // required: true
+        required: true
     },
     refereeEmail: {
         type: String,
-        // required: true
+        required: true
     },
     employerName: {
         type: String,
-        // required: true
+        required: true
     },
     employerPhone: {
         type: String,
-        // required: true
+        required: true
     },
     employerEmail: {
         type: String,
-        // required: true
+        required: true
     },
     occupation: {
         type: String,
-        // required: true
+        required: true
     },
     weeklyIncome: {
         type: String,
-        // required: true
+        required: true
     },
     landlordAddress: {
         type: String,
-        // required: true
+        required: true
     },
     timeAtAdress: {
         type: String,
-        // required: true
+        required: true
     },
     reasonForLeaving: {
         type: String,
-        // required: true
+        required: true
     },
 })
 
