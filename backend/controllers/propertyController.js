@@ -8,23 +8,22 @@ const getProperties = async (request, response) => {
 }
 
 
-// get a single property
-const getProperty = async (request, response) => {
-    const { id } = request.params
+// // get a single property
+// const getProperty = async (request, response) => {
 
-//check if the requested property exists
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return response.status(404).json({error: 'no such property'})
-    }
+// //check if the requested property exists
+//     if (!mongoose.Types.ObjectId.isValid()) {
+//         return response.status(404).json({error: 'no such property'})
+//     }
 
-    const property = await Property.findById(id)
+//     const property = await Property.find({})
     
-//check if the requested property exists
-    if (!property) {
-        return response.status(404).json({ error: 'No such property' })
-    }
-    response.status(200).json(property)
-}
+// //check if the requested property exists
+//     if (!property) {
+//         return response.status(404).json({ error: 'No such property' })
+//     }
+//     response.status(200).json(property)
+// }
 
 
 // //create a new property
@@ -43,5 +42,5 @@ const getProperty = async (request, response) => {
 module.exports = {
     // createProperty,
     getProperties,
-    getProperty
+    // getProperty
 }
