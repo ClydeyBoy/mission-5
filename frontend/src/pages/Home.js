@@ -12,7 +12,6 @@ import Carousel2 from '../components/Carousel2';
  <Link to = '/propertypage'>Browse properties</Link>
  <br></br>
  <Link to = '/profilepage'>View Account</Link>
- <Carousel2></Carousel2>
     </div>
     
   )
