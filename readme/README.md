@@ -115,7 +115,7 @@ You will need the following programmes to run the project:
 ## Usage
 
 The web application allows for login and signup functionality.
-Please note that there is a small bug in the login, where one must refresh the browser after logging in to access protected routes (i.e. the profile page route).
+Please note that there is a small bug in the login, where one must refresh the browser after logging in/signing up to access protected routes (i.e. the profile page route).
 
 <img src="images/login1.png" width="500" height="300">
 <img src="images/signup.png" width="500" height="300">
