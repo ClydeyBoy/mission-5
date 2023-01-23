@@ -1,5 +1,5 @@
 import halesowen_ave_photo from "../images/property_page/18_halesowen_ave.png"
-import western_springs_road_photo from "../images/property_page/11_western springs_road.png"
+import western_springs_road_photo from "../images/property_page/11_Western Springs_Road.png"
 import napier_street_photo from "../images/property_page/4-23_napier_street.png"
 import kitchener_road_photo from "../images/property_page/23_kitchener_road.png"
 import fourth_avenue_photo from "../images/property_page/54_fourth_avenue.png"
