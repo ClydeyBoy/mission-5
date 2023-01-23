@@ -92,7 +92,12 @@ You will need the following programmes to run the project:
 
 ### Installation
 
-1. Clone the repo
+1. Initialise your local Git
+   ```sh
+   git init
+   ```
+
+2. Clone the repo
    ```sh
    git clone https://ClydeyBoy/mission-5.git
    ```
