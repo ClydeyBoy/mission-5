@@ -18,7 +18,7 @@ function Header() {
         <Login trigger2={login} setTrigger2={setLogin}></Login>
 
             <div className='headerContainer'>
-                <Link to='/'><img className='headerLogo' src={companyLogo} alt=""></img></Link>
+                <Link to='/' ><img className='headerLogo' src={companyLogo} alt="" ></img></Link>
                 <div className='headerLinks'>
                     <div>Property Owners</div>
                     <div>Tenants</div>
